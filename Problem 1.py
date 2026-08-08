@@ -1,16 +1,24 @@
-import
+def roman_to_int(s: str) -> int:
+    roman = {
+        'I':1,
+        'V': 5,
+        'X': 10,
+        'l': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
 
-if __name__ == '__main__':
-    n = int(input().strip())
-    
-    if n % 2 != 0:
-        print("Weird")
-        
-    else:
-        
-        if 2 <= n <= 5:
-            print("Not Weird")
-        elif 6 <= n <= 20:
-            print("Weird")
-        elif n > 20:
-            print("Not weird")
+    total = 0 
+    n = len(s)
+
+    for i in range(n):
+        value = roman[s[i]]
+        if i + 1 < n and value < roman[s[i + 1]]:
+            total -= value
+        else:
+            total += value
+
+    return total
+
+print(roman_to_int("MCMXCIV"))
