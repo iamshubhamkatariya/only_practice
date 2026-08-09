@@ -1,33 +1,37 @@
 def myAtoi(s: str) -> int:
-
-    INT_MIN = -2**31
-    INT_MAX = 2**31 -1
+    int_max = 2**31 -1
+    int_min = -2**31
 
     i = 0
     n = len(s)
 
-    while i < n and s[i] == " ":
+    while i < n and s[i] == "":
         i += 1
 
-    if i == n:
+    if i ==n:
         return 0
 
     sign = 1
-    if s[i] == "-":
-        sign = -1
+    if s[i] == "+":
         i += 1
-    elif s[i] == "+":
+    elif s[i] == "-":
+        sign = -1
         i += 1
 
     result = 0
     while i < n and s[i].isdigit():
-        result = result * 10 + int(s[i])
+        digit = int(s[i])
+
+        if result > (int_max - digit) // 10:
+            return int_max if sign == 1 else int_min
+
+        result = result * 10 + digit
         i += 1
 
     result *= sign
-    if result < INT_MIN:
-        return INT_MIN
-    if result > INT_MAX:
-        return INT_MAX
 
+    if result < int_min:
+        return int_min
+    if result > int_max:
+        return int_max
     return result
