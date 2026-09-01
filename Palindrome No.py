@@ -12,4 +12,4 @@ while(num > 0):
 if rev == original:
     print(original , "is a pailndrome No. ")
 else:
-    print(original, "is NOT a pailndrome")
+    print(original, "this is not a palindrome No. ")
