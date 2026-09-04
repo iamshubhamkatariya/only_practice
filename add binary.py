@@ -28,3 +28,6 @@ def add_binary_manual(a: str, b: str) -> str:
 
 print(add_binary_manual('101', '110'))
 print(add_binary_manual('1111', '1'))
+print(add_binary_manual('001', '001'))
+print(add_binary_manual('111', '111'))
+print(add_binary_manual('0', '0'))
