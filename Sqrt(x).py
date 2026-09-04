@@ -20,7 +20,3 @@ class Solution:
 if __name__ == "__main__":
     sol = Solution()
     print(sol.mySqrt(4))   # 2
-    print(sol.mySqrt(8))   # 2
-    print(sol.mySqrt(15))  # 3
-    print(sol.mySqrt(0))   # 0
-    print(sol.mySqrt(1))   # 1
